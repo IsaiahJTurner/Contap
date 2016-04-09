@@ -11,10 +11,17 @@
 import Foundation
 import UIKit
 
-class Table: UIViewController, UITableViewDelegate{
+class Table: UITableViewController{
 
-    let myarray = ["item1", "item2", "item3"]
     
+    @IBOutlet var tableview: UITableView!
+    
+    let myarray = ["item1", "item2", "item3"]
+
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        tableview.reloadData()
+    }
     
     override func viewDidLoad() {
         viewDidLoad()
@@ -22,17 +29,17 @@ class Table: UIViewController, UITableViewDelegate{
     }
     
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myarray.count
     }
         
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("customcell", forIndexPath: indexPath)
         cell.textLabel?.text = myarray[indexPath.item]
         return cell
     }
     
-    func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() {
         didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
