@@ -1,0 +1,25 @@
+{
+  "name": "contap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IsaiahJTurner/Contap.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IsaiahJTurner/Contap/issues"
+  },
+  "homepage": "https://github.com/IsaiahJTurner/Contap#readme",
+  "dependencies": {
+    "async": "^2.0.0-rc.3",
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.4",
+    "needle": "^1.0.0"
+  }
+}
