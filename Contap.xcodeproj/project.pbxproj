@@ -15,6 +15,7 @@
 		FE358CC11CB962C1006056AD /* ContapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE358CC01CB962C1006056AD /* ContapTests.swift */; };
 		FE358CCC1CB962C1006056AD /* ContapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE358CCB1CB962C1006056AD /* ContapUITests.swift */; };
 		FE358CDA1CB979CF006056AD /* navigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE358CD91CB979CF006056AD /* navigationBar.swift */; };
+		FE358CDC1CB9A345006056AD /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE358CDB1CB9A345006056AD /* Table.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		FE358CCB1CB962C1006056AD /* ContapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContapUITests.swift; sourceTree = "<group>"; };
 		FE358CCD1CB962C1006056AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE358CD91CB979CF006056AD /* navigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = navigationBar.swift; sourceTree = "<group>"; };
+		FE358CDB1CB9A345006056AD /* Table.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				FE358CAB1CB962C0006056AD /* AppDelegate.swift */,
 				FE358CAD1CB962C0006056AD /* ViewController.swift */,
 				FE358CAF1CB962C0006056AD /* Main.storyboard */,
+				FE358CDB1CB9A345006056AD /* Table.swift */,
 				FE358CD91CB979CF006056AD /* navigationBar.swift */,
 				FE358CB21CB962C0006056AD /* Assets.xcassets */,
 				FE358CB41CB962C0006056AD /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 			files = (
 				FE358CAE1CB962C0006056AD /* ViewController.swift in Sources */,
 				FE358CDA1CB979CF006056AD /* navigationBar.swift in Sources */,
+				FE358CDC1CB9A345006056AD /* Table.swift in Sources */,
 				FE358CAC1CB962C0006056AD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
