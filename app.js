@@ -47,7 +47,8 @@ app.get("/connect", function(req, res) {
     savedRes = null;
 });
 app.get("/connect2", function(req, res) {
-
+  contactInfo = false;
+  savedRes = false;
 });
 app.get("/contacts", function(req, res) {
     res.json({
