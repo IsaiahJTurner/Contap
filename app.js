@@ -33,7 +33,7 @@ app.get("/connect", function(req, res) {
     "email_addresses": [\
       {\
         "label": null,\
-        "address": "' + contactInfo.email + '"'
+        "address": "' + contactInfo.email + '"' +
         '}\
     ]\
   }\
