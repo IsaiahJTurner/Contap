@@ -28,7 +28,28 @@ app.get("/connect", function(req, res) {
             content: {
                 from: 'testing@sparkpostbox.com',
                 subject: 'You connected with ' + req.query.name,
-                html: '<html><body><p>You connected with + ' + req.query.name + '. You\`ve each been CCd on this email.<br><br>Thanks, <br>Contap</p></body></html>'
+                html: '<html><body><p>You connected with ' + req.query.name + '. You\`ve each been CCd on this email.<br><br>Thanks, <br>Contap</p></body></html>'
+            },
+            recipients: [{
+                address: contactInfo.email
+            }, {
+                address: req.query.email
+            }]
+        }
+    }, function(err, res) {
+        if (err) {
+            console.log('Whoops! Something went wrong');
+            console.log(err);
+        } else {
+            console.log('Woohoo! You just sent your first mailing!');
+        }
+    });
+    sp.transmissions.send({
+        transmissionBody: {
+            content: {
+                from: 'testing@sparkpostbox.com',
+                subject: 'You connected with ' + contactInfo.name,
+                html: '<html><body><p>You connected with ' + contactInfo.name + '. You\`ve each been CCd on this email.<br><br>Thanks, <br>Contap</p></body></html>'
             },
             recipients: [{
                 address: req.query.email
