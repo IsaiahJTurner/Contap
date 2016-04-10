@@ -8,44 +8,58 @@ var sp = new SparkPost('7c247123769702176276c6dd238c4bdf3184c8d9');
 
 var contactInfo = {};
 var savedRes;
-sp.transmissions.send({
-  transmissionBody: {
-    content: {
-      from: 'testing@sparkpostbox.com',
-      subject: 'Hello, World!',
-      html:'<html><body><p>Testing SparkPost - the world\'s most awesomest email service!</p></body></html>'
-    },
-    recipients: [
-      {address: 'sparkpost@isaiahjturner.com'}
-    ]
-  }
-}, function(err, res) {
-  if (err) {
-    console.log('Whoops! Something went wrong');
-    console.log(err);
-  } else {
-    console.log('Woohoo! You just sent your first mailing!');
-  }
-});
+var contacts = [];
+
 app.set('port', (process.env.PORT || 3005));
 app.use(cookieParser());
 
 app.get("/connect", function(req, res) {
-  if (!savedRes) {
-    contactInfo = req.query;
-    savedRes = res;
-    return;
-  }
-  res.send(contactInfo);
-  savedRes.send(req.query);
-  savedRes = null;
+    contacts.push({
+        name: req.query.name || "Unknown " + Math.floor(Math.random() * 900) + 100,
+        email: req.query.email
+    });
+    if (!savedRes) {
+        contactInfo = req.query;
+        savedRes = res;
+        return;
+    }
+    sp.transmissions.send({
+        transmissionBody: {
+            content: {
+                from: 'testing@sparkpostbox.com',
+                subject: 'You connected with ' + req.query.name,
+                html: '<html><body><p>You connected with + ' + req.query.name + '. You\`ve each been CCd on this email.</p></body></html>'
+            },
+            recipients: [{
+                address: req.query.email
+            }, {
+                address: savedRes.query.email
+            }]
+        }
+    }, function(err, res) {
+        if (err) {
+            console.log('Whoops! Something went wrong');
+            console.log(err);
+        } else {
+            console.log('Woohoo! You just sent your first mailing!');
+        }
+    });
+    res.send(contactInfo);
+    savedRes.send(req.query);
+    savedRes = null;
+});
+app.get("/contacts", function(req, res) {
+    res.json({
+        contacts: contacts
+    })
+    contacts = [];
 });
 app.get("/memes", function(req, res) {
-  res.sendFile(__dirname + "/public/memes.html");
+    res.sendFile(__dirname + "/public/memes.html");
 });
 app.get("*", function(req, res) {
-  res.send("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+    res.send("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
 });
 app.listen(app.get('port'), function() {
-  console.log('Started on port ' + app.get("port") + '!');
+    console.log('Started on port ' + app.get("port") + '!');
 });
