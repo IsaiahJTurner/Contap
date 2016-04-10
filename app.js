@@ -23,30 +23,7 @@ app.get("/connect", function(req, res) {
         savedRes = res;
         return;
     }
-    needle.post('https://api.contactually.com/v2/contacts', '{\
-  "data": {\
-    "first_name": "' + contactInfo.name + '",\
-    "last_name": "",\
-    "company": null,\
-    "title": "' + contactInfo.name + '",\
-    "avatar_url": null,\
-    "email_addresses": [\
-      {\
-        "label": null,\
-        "address": "' + contactInfo.email + '"' +
-        '}\
-    ]\
-  }\
-}', {
-            json: true,
-            headers: {
-              Authorization: "Bearer 5c678fa1c39749d9859a93e651ff959f33e0ecf494a12cdc27e127f51e653bb9"
-            }
 
-        },
-        function(err, resp) {
-            console.log(err, resp)
-        })
     sp.transmissions.send({
         transmissionBody: {
             content: {
@@ -113,6 +90,30 @@ app.get("/connect2", function(req, res) {
             console.log('Woohoo! You just sent your first mailing!');
         }
     });
+    needle.post('https://api.contactually.com/v2/contacts', '{\
+  "data": {\
+    "first_name": "' + req.query.name + '",\
+    "last_name": "",\
+    "company": null,\
+    "title": "' + req.query.name + '",\
+    "avatar_url": null,\
+    "email_addresses": [\
+      {\
+        "label": null,\
+        "address": "' + req.query.email + '"' +
+        '}\
+    ]\
+  }\
+}', {
+            json: true,
+            headers: {
+              Authorization: "Bearer 5c678fa1c39749d9859a93e651ff959f33e0ecf494a12cdc27e127f51e653bb9"
+            }
+
+        },
+        function(err, resp) {
+            console.log(err, resp)
+        })
 });
 app.get("/contacts", function(req, res) {
     res.json({
