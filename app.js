@@ -28,12 +28,11 @@ app.get("/connect", function(req, res) {
             content: {
                 from: 'testing@sparkpostbox.com',
                 subject: 'You connected with ' + req.query.name,
-                html: '<html><body><p>You connected with ' + req.query.name + '. You\`ve each been CCd on this email.<br><br>Thanks, <br>Contap</p></body></html>'
+                reply_to: req.query.email,
+                html: 'You connected with ' + req.query.name + '. Reply to this email to this email to contact them.<br><br>Thanks, <br>Contap</p>',
             },
             recipients: [{
                 address: contactInfo.email
-            }, {
-                address: req.query.email
             }]
         }
     }, function(err, res) {
@@ -49,12 +48,11 @@ app.get("/connect", function(req, res) {
             content: {
                 from: 'testing@sparkpostbox.com',
                 subject: 'You connected with ' + contactInfo.name,
-                html: '<html><body><p>You connected with ' + contactInfo.name + '. You\`ve each been CCd on this email.<br><br>Thanks, <br>Contap</p></body></html>'
+                html: 'You connected with ' + contactInfo.name + '. Reply to this email to this email to contact them.<br><br>Thanks, <br>Contap</p>',
+                reply_to: contactInfo.email
             },
             recipients: [{
                 address: req.query.email
-            }, {
-                address: contactInfo.email
             }]
         }
     }, function(err, res) {

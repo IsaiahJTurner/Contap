@@ -18,7 +18,7 @@ class TapViewController: UIViewController {
             return;
         }
         goAway = true;
-        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(3 * Double(NSEC_PER_SEC)))
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
         dispatch_after(delayTime, dispatch_get_main_queue()) {
             Alamofire.request(.GET, "http://contap.isaiahjturner.com/connect", parameters: ["name": self.defaults.objectForKey("name") as! String, "email": self.defaults.objectForKey("email") as! String])
                 .responseJSON { response in
