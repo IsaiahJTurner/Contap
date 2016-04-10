@@ -40,7 +40,7 @@ app.get("/connect", function(req, res) {
 }', {
             json: true,
             headers: {
-              Authorized: "Bearer 5c678fa1c39749d9859a93e651ff959f33e0ecf494a12cdc27e127f51e653bb9"
+              Authorization: "Bearer 5c678fa1c39749d9859a93e651ff959f33e0ecf494a12cdc27e127f51e653bb9"
             }
 
         },
