@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8BE806091CB9FC5A0009F3C1 /* TapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE806081CB9FC5A0009F3C1 /* TapViewController.swift */; };
+		8BE806111CBA06870009F3C1 /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE806101CBA06870009F3C1 /* SuccessViewController.swift */; };
 		FE358CAC1CB962C0006056AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE358CAB1CB962C0006056AD /* AppDelegate.swift */; };
 		FE358CAE1CB962C0006056AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE358CAD1CB962C0006056AD /* ViewController.swift */; };
 		FE358CB11CB962C0006056AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE358CAF1CB962C0006056AD /* Main.storyboard */; };
@@ -110,6 +112,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8BE806081CB9FC5A0009F3C1 /* TapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapViewController.swift; sourceTree = "<group>"; };
+		8BE806101CBA06870009F3C1 /* SuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
 		FE358CA81CB962C0006056AD /* Contap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE358CAB1CB962C0006056AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE358CAD1CB962C0006056AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 				FE358CB41CB962C0006056AD /* LaunchScreen.storyboard */,
 				FE358CB71CB962C0006056AD /* Info.plist */,
 				FE358CDD1CB9E20A006056AD /* SignUpViewController.swift */,
+				8BE806081CB9FC5A0009F3C1 /* TapViewController.swift */,
+				8BE806101CBA06870009F3C1 /* SuccessViewController.swift */,
 			);
 			path = Contap;
 			sourceTree = "<group>";
@@ -418,10 +424,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE358CAE1CB962C0006056AD /* ViewController.swift in Sources */,
+				8BE806091CB9FC5A0009F3C1 /* TapViewController.swift in Sources */,
 				FE358CDA1CB979CF006056AD /* navigationBar.swift in Sources */,
 				FE358CDC1CB9A345006056AD /* NearbyTableViewController.swift in Sources */,
 				FE358CAC1CB962C0006056AD /* AppDelegate.swift in Sources */,
 				FE358CF81CB9E81B006056AD /* ResultTableViewCell.swift in Sources */,
+				8BE806111CBA06870009F3C1 /* SuccessViewController.swift in Sources */,
 				FE358CDE1CB9E20A006056AD /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

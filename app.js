@@ -28,12 +28,10 @@ app.get("/connect", function(req, res) {
             content: {
                 from: 'testing@sparkpostbox.com',
                 subject: 'You connected with ' + req.query.name,
-                html: '<html><body><p>You connected with + ' + req.query.name + '. You\`ve each been CCd on this email.</p></body></html>'
+                html: '<html><body><p>Hi ' + req.query.name + ',<br/> You are now connected with Hillary Sanders. She will reach out to you shortly.</p></body></html>'
             },
             recipients: [{
                 address: req.query.email
-            }, {
-                address: savedRes.query.email
             }]
         }
     }, function(err, res) {
@@ -47,6 +45,9 @@ app.get("/connect", function(req, res) {
     res.json(contactInfo);
     savedRes.json(req.query);
     savedRes = null;
+});
+app.get("/connect2", function(req, res) {
+
 });
 app.get("/contacts", function(req, res) {
     res.json({

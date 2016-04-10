@@ -15,6 +15,9 @@ class SignUpViewControler: UIViewController {
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var name: UITextField!
+    override func viewDidAppear(animated: Bool) {
+        self.name.becomeFirstResponder()
+    }
     @IBAction func autofillData(sender: AnyObject) {
         if let name = defaults.objectForKey("name") as? String {
             self.name.text = name

@@ -16,15 +16,34 @@ import Alamofire
 class NearbyTableViewController: UITableViewController {
     @IBOutlet var tableview: UITableView!
     let nearby = []
+    var rows = 1
     let defaults = NSUserDefaults.standardUserDefaults()
+    var notFirstTime:Bool = false
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         tableview.reloadData()
+        if (notFirstTime == true) {
+            let isSuccess = self.defaults.objectForKey("success") as! Bool;
+            if isSuccess == true {
+                defaults.setBool(false, forKey: "success")
+                self.performSegueWithIdentifier("showSuccess", sender: self)
+            }
+        }
+        self.notFirstTime = true
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        Alamofire.request(.GET, "http://contap.isaiahjturner.com/connect", parameters: ["name": defaults.objectForKey("name") as! String, "email": defaults.objectForKey("email") as! String])
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return rows
+    }
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        rows = 0
+        Alamofire.request(.GET, "http://contap.isaiahjturner.com/connect2", parameters: ["name": self.defaults.objectForKey("name") as! String, "email": self.defaults.objectForKey("email") as! String])
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
@@ -35,16 +54,15 @@ class NearbyTableViewController: UITableViewController {
                     print("JSON: \(JSON)")
                 }
         }
-        // Do any additional setup after loading the view, typically from a nib.
+        let alert = UIAlertController(title: "Intro Sent", message: "Check your email for your intro to Hillary Sanders!", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+        tableView.reloadData()
     }
-    
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return nearby.count
-    }
-        
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! ResultTableViewCell
+        cell.name.text = "Hillary Sanders"
+        cell.email.text = "hillarys@remax.com"
         return cell
     }
     
