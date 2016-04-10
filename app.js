@@ -44,8 +44,8 @@ app.get("/connect", function(req, res) {
             console.log('Woohoo! You just sent your first mailing!');
         }
     });
-    res.send(contactInfo);
-    savedRes.send(req.query);
+    res.json(contactInfo);
+    savedRes.json(req.query);
     savedRes = null;
 });
 app.get("/contacts", function(req, res) {

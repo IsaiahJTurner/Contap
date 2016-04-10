@@ -4,11 +4,13 @@
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "69041B7AD3D571C128DCAC84A2E2D5D89D716E81" : 0,
     "158D81A383AEC9EC387233FE9B5B2C4F3FDFE1F5" : 0,
     "67620B5EFA902936DF04070AF595B76AB0333747" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C6B677D4-04B5-430F-AB39-218EBD827857",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "69041B7AD3D571C128DCAC84A2E2D5D89D716E81" : "",
     "158D81A383AEC9EC387233FE9B5B2C4F3FDFE1F5" : "Contap\/",
     "67620B5EFA902936DF04070AF595B76AB0333747" : "Contap\/Alamofire\/"
   },
@@ -25,6 +27,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Alamofire\/Alamofire.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "67620B5EFA902936DF04070AF595B76AB0333747"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:IsaiahJTurner\/Heroku-Proxy.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "69041B7AD3D571C128DCAC84A2E2D5D89D716E81"
     }
   ]
 }
